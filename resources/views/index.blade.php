@@ -13,16 +13,18 @@
     </head>
     <body>
         <h1>Blog Name</h1>
-        <div class="posts">
-            @foreach($posts as $post)
+        <div class='posts'>
+            @foreach ($posts as $post)
+        <div class="post">
             <a href="/posts/{{$post->id}}"><h2 classs="title">{{ $post->title}}</h2></a>
             <p class="body">{{$post->body}}</p>
-            
         </div>
-            @endforeach
-            <div class="paginate">
-                {{$posts->links()}}
-                
-            </div>
+           @endforeach
+        </div>
+            
+        <div class='paginate'>
+            {{ $posts->links() }}
+        </div>   
+        
     </body>
 </html>
